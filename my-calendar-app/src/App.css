@@ -40,12 +40,21 @@
   background: white;
 }
 
+.calendar .week .date {
+  width: 30px;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 button {
   background: white;
   border: none;
 }
 
-datepicker-container {
+.datepicker-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,4 +80,13 @@ datepicker-container {
   color: white;
   border-radius: 5px;
   filter: drop-shadow(2px 2px 2px #FD6CBB);
+}
+
+.selected {
+  border: 1px solid gray;
+}
+
+span {
+  margin: auto;
+  padding: 15px 10px;
 }

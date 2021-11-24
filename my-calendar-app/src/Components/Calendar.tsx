@@ -1,4 +1,4 @@
-import React from "react";
+import React, {MouseEvent, useState} from "react";
 import { Weekday, Date } from "../../types";
 import { Weekdays } from "../configs/Weekdays";
 import { monthDates } from "../configs/MonthDays";
@@ -9,11 +9,16 @@ import { monthDates } from "../configs/MonthDays";
 export const Calendar: React.FC<{}> = ({}) => {
 
     const [selectedDate, setSelectedDate] = useState<string | null>();
-    const handleChange 
+    const handleChange = (e: MouseEvent<HTMLButtonElement>) => {
+        setSelectedDate(e.currentTarget.getAttribute("value"));
+    }
 
     const generateDates = (date: number) => {
+
+        let selectedDateNumber: number = selectedDate ? parseInt(selectedDate) : 0;
+
         for(let i = 0; i < 7; i++) {
-            return <button className={`date ${date == 18 ? "today" : ""}`} onCLick={handleChange} value={date}><p>{date}</p></button> 
+            return <button className={`date ${date == 18 ? "today" : ""} ${date == selectedDateNumber ? "selected" : ""}`} onClick={handleChange} value={date}><p>{date}</p></button> 
         }
     }
 
