@@ -2,8 +2,8 @@ import React, {MouseEvent, useState} from "react";
 import { Weekday, Date } from "../../types";
 import { Weekdays } from "../configs/Weekdays";
 import { monthDates } from "../configs/MonthDays";
-// import { ChevronLeftIcon } from "../assets/icons/ChevronLeftIcon";
-// import { ChevronRightIcon } from "../assets/icons/ChevronRightIcon";
+import {BsChevronLeft}  from 'react-icons/bs';
+import {BsChevronRight}  from 'react-icons/bs';
 
 
 export const Calendar: React.FC<{}> = ({}) => {
@@ -37,7 +37,10 @@ export const Calendar: React.FC<{}> = ({}) => {
     return (
         <div className="calendar-container">
             <div className="datepicker-container">
+                <BsChevronLeft />
                 <span>February 2021</span>
+                <BsChevronRight />
+
             </div>
             <div className="weekdays-container">
                 {Weekdays.map(day => (
