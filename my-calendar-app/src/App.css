@@ -44,3 +44,31 @@ button {
   background: white;
   border: none;
 }
+
+datepicker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.datepicker-container span {
+  font-size:  20px;
+}
+
+.datepicker-container svg {
+  border-radius:  100px;
+  background: #E8E8E8;
+  padding: 10px 10px;
+  margin: 10px;
+}
+
+.today {
+  background-color: #FD6CBB;
+  color: white;
+  border-radius: 5px;
+  filter: drop-shadow(2px 2px 2px #FD6CBB);
+}

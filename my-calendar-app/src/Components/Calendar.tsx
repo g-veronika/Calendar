@@ -2,19 +2,23 @@ import React from "react";
 import { Weekday, Date } from "../../types";
 import { Weekdays } from "../configs/Weekdays";
 import { monthDates } from "../configs/MonthDays";
+// import { ChevronLeftIcon } from "../assets/icons/ChevronLeftIcon";
+// import { ChevronRightIcon } from "../assets/icons/ChevronRightIcon";
 
 
 export const Calendar: React.FC<{}> = ({}) => {
 
+    const [selectedDate, setSelectedDate] = useState<string | null>();
+    const handleChange 
+
     const generateDates = (date: number) => {
         for(let i = 0; i < 7; i++) {
-            return <button className="date" value={date}><p>{date}</p></button> 
+            return <button className={`date ${date == 18 ? "today" : ""}`} onCLick={handleChange} value={date}><p>{date}</p></button> 
         }
     }
 
 
     const generateWeeks = (dates: Array<Date>) => {
-
         let daysInWeek = 7;
         let tempArray = [];
 
@@ -25,10 +29,10 @@ export const Calendar: React.FC<{}> = ({}) => {
     }
 
 
-
     return (
         <div className="calendar-container">
             <div className="datepicker-container">
+                <span>February 2021</span>
             </div>
             <div className="weekdays-container">
                 {Weekdays.map(day => (
